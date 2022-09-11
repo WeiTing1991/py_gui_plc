@@ -1,4 +1,4 @@
-# App from qtpy
+# Simple app by qtpy
 
 More info coming soon.
 
