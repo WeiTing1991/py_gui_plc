@@ -3,7 +3,6 @@ from qtpy import (
     QtCore, QtGui, QtWidgets
     )
 from qtpy.QtGui import QIcon
-from qtpy.QtCore import Slot
 
 from button import Button
 from slider import Slider
@@ -22,34 +21,34 @@ class App:
 
         self.width = width
         self.height = height
-        self.app = app
-        self.window = QtWidgets.QWidget()
+        self.window = QtWidgets()
         self.layout = QtWidgets.QVBoxLayout()
         
-        self.button = QtWidgets.QPushButton("Click me")
-        self.button_tg = QtWidgets.QDialog()
-        self.button.clicked.connect(lambda: self.toogle())
+        self.app = app
+        self.button = QtWidgets.QRadioButton("1")
+        self.button2 = QtWidgets.QPushButton("push")
+        
         self.layout.addWidget(self.button)
-        self.layout.addWidget(self.button_tg)
-        self.window.setLayout(self.layout)
-        self.a =[]
+        self.layout.addWidget(self.button2)
 
+
+        self.app.
     def show(self):
         """ Show the window viewer
         """
+
         self.window.resize(self.width, self.height)
         self.window.show()
-        self.app.exec()
-    
-    def toogle(self):
-        x = True
-        print(x)
-        self.a.append(x)
-        return x
+        sys.exit(self.app.exec())
+
+    def toggle(self, text:str):
+        self.button = QtWidgets.QPushButton(text)
+        self.layout.addWidget(self.button)
+        self.button.setCheckable(True)
+
+
 
 if __name__ == "__main__":
     
     dcs_app = App()
     dcs_app.show()
-    print(dcs_app.a)
-
