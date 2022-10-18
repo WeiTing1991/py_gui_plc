@@ -1,55 +1,37 @@
 import sys
-from qtpy import (
-    QtCore, QtGui, QtWidgets
-    )
-from qtpy.QtGui import QIcon
-from qtpy.QtCore import Slot
+from PySide6.QtWidgets import QApplication, QMainWindow, QWidget
 
-from button import Button
-from slider import Slider
 
-class App:
-    def __init__(self, 
-                 title: str = 'dcs',
-                 width: int = 1200,
-                 height: int = 800,
+
+class ControllerApp():
+    def __init__(self,
+                title: str='ControllerApp_v1',
+                width: int = 1920,
+                height: int = 1080,
                 ):
-        
-        # create the window
-        app = QtWidgets.QApplication(sys.argv)
-        #app.references = set()
+        super().__init__()
+        app = QApplication(sys.argv)
         app.setApplicationName(title)
 
+        self.app = app
         self.width = width
         self.height = height
-        self.app = app
-        self.window = QtWidgets.QWidget()
-        self.layout = QtWidgets.QVBoxLayout()
-        
-        self.button = QtWidgets.QPushButton("Click me")
-        self.button_tg = QtWidgets.QDialog()
-        self.button.clicked.connect(lambda: self.toogle())
-        self.layout.addWidget(self.button)
-        self.layout.addWidget(self.button_tg)
-        self.window.setLayout(self.layout)
-        self.a =[]
+        self.window = QMainWindow()
 
-    def show(self):
+
+    def run(self):
         """ Show the window viewer
         """
         self.window.resize(self.width, self.height)
         self.window.show()
-        self.app.exec()
-    
-    def toogle(self):
-        x = True
-        print(x)
-        self.a.append(x)
-        return x
+
+        try:
+            sys.exit(self.app.exec())
+        except SystemExit:
+            print("Closing the app...")
+
 
 if __name__ == "__main__":
     
-    dcs_app = App()
-    dcs_app.show()
-    print(dcs_app.a)
-
+    app = ControllerApp()
+    app.run()

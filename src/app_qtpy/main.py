@@ -1,12 +1,6 @@
-from app import App
+from app import ControllerApp
 
-
-
-
-
-
-dcs_app = App()
 
 
 if __name__ == "__main__":
-    dcs_app.show()
+    ControllerApp().run()

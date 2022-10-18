@@ -1,8 +1,8 @@
-# Simple app
+# GUI PLC
 
-Simple app test by using Qtpy 
+The Simple GUI app for PLC controler by using Qtpy 
 
-
+## Software
 
 ## Installation
 ```
@@ -16,12 +16,14 @@ pip install PySide6
 
 pip install Qtpy
 
+pip install pyads
+
+
 ```
 ### Version
 
 QtPy = 2.2.0
-
 python = 3.10.4
-
+pyads = 3.3.9
 
 
