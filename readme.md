@@ -1,6 +1,6 @@
 # GUI PLC
 
-The Simple GUI app for PLC controler by using Qtpy 
+The Simple GUI app for PLC controler by using PySide6
 
 ## Software
 

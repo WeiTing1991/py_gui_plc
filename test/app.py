@@ -1,65 +1,53 @@
 import sys
-from qtpy import (
-    QtCore, QtGui, QtWidgets
-    )
-from qtpy.QtGui import QIcon
-from qtpy.QtCore import Slot
 
-from button import Button
-from slider import Slider
-
-class App:
-    def __init__(self, 
-                 title: str = 'dcs',
-                 width: int = 1200,
-                 height: int = 800,
-                ):
-        
-        # create the window
-        app = QtWidgets.QApplication(sys.argv)
-        #app.references = set()
-        app.setApplicationName(title)
-
-        self.width = width
-        self.height = height
-        self.app = app
-        self.window = QtWidgets.QWidget()
-        self.layout = QtWidgets.QHBoxLayout()
-        
-        
-        self.button = QtWidgets.QPushButton("True")
-        self.button_2 = QtWidgets.QPushButton("False")
-
-        self.button_text = QtWidgets.QLineEdit()
-        self.button.clicked.connect(lambda: self.toogle())
-        self.layout.addWidget(self.button)
-        self.layout.addWidget(self.button_2)
-        self.layout.addWidget(self.button_tg)
-        self.layout.addStretch(1)
-        
-        self.layout_v= QtWidgets.QVBoxLayout()
-        self.layout_v.addLayout(self.layout)
+from PySide6.QtCore import QEvent, QRect, Qt
+from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton
+from PySide6.QtStateMachine import QEventTransition, QState, QStateMachine
 
 
-        self.window.setLayout(self.layout_v)
-        self.a =[]
+class MainWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        button = QPushButton(self)
+        button.setGeometry(QRect(100, 100, 100, 100))
 
-    def show(self):
-        """ Show the window viewer
-        """
-        self.window.resize(self.width, self.height)
-        self.window.show()
-        self.app.exec()
-    
-    def toogle(self):
-        x = True
-        print(x)
-        self.a.append(x)
-        return x
+        machine = QStateMachine(self)
+        s1 = QState()
+        s1.assignProperty(button, 'text', 'Outside')
+        s2 = QState()
+        s2.assignProperty(button, 'text', 'Inside')
 
-if __name__ == "__main__":
-    
-    dcs_app = App()
-    dcs_app.show()
-    print(dcs_app.a)
+        enter_transition = QEventTransition(button, QEvent.Enter)
+        enter_transition.setTargetState(s2)
+        s1.addTransition(enter_transition)
 
+        leave_transition = QEventTransition(button, QEvent.Leave)
+        leave_transition.setTargetState(s1)
+        s2.addTransition(leave_transition)
+
+        s3 = QState()
+        s3.assignProperty(button, 'text', 'Pressing...')
+
+        press_transition = QEventTransition(button, QEvent.MouseButtonPress)
+        press_transition.setTargetState(s3)
+        s2.addTransition(press_transition)
+
+        release_transition = QEventTransition(button, QEvent.MouseButtonRelease)
+        release_transition.setTargetState(s2)
+        s3.addTransition(release_transition)
+
+        machine.addState(s1)
+        machine.addState(s2)
+        machine.addState(s3)
+
+        machine.setInitialState(s1)
+        machine.start()
+
+        self.setCentralWidget(button)
+        self.show()
+
+
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    main_win = MainWindow()
+    sys.exit(app.exec())
