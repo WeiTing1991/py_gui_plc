@@ -6,18 +6,19 @@ The Simple GUI app for PLC controler
 
 ## Installation
 
-Create env
 
+Create env
 ```bash
 conda create -n pyapp python=3.10
 conda activate pyapp
 ```
-
 Install packages
 ```bash
 pip install -r requirements.txt
 
 ```
+
+
 ### Version
 
 python = 3.10
