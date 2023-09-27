@@ -1,8 +1,3 @@
-
-
-
-
-#print(kivy.__version__)
 #kivy.require("2.0.1")
 from kivy.app import App
 from kivy.uix.widget import Widget

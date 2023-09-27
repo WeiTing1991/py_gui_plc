@@ -18,9 +18,4 @@ sphinx >=3.4
 twine
 wheel
 
-matplotlib
-Kivy
-PyQt6
-PySide6
-Qtpy
 -e .

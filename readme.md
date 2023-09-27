@@ -1,29 +1,40 @@
-# GUI PLC
+# **GUI PLC**
 
-The Simple GUI app for PLC controler 
+![GitHub - License](https://img.shields.io/badge/License-MIT-blue.svg)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/COMPAS.svg)](https://pypi.python.org/project/COMPAS)
+[![PyPI - Latest Release](https://img.shields.io/pypi/v/COMPAS.svg)](https://pypi.python.org/project/COMPAS)
 
-## Software
+The Simple GUI app for PLC controler. 
 
-## Installation
 
+## __Requirements__
+* [Windows 10 Pro]()
+* [TwinCAT](https://www.beckhoff.com/en-en/products/automation/twincat/?pk_campaign=AdWords-AdWordsSearch-TwinCAT_EN&pk_kwd=twincat&gclid=Cj0KCQjw9ZGYBhCEARIsAEUXITW5dmPmQ2629HIuFY7wfbSR70pi5uY2lkYziNmfKYczm1_YsK4hhPsaApjyEALw_wcB)
+
+
+## __Installation__
 
 Create env
+
 ```bash
-conda create -n pyapp python=3.10
-conda activate pyapp
+conda config --add channels conda-forge
+conda create -n my-project python=3.10
 ```
+
 Install packages
-```bash
-pip install -r requirements.txt
 
+```bash
+conda activate my-project
+pip install -r requirements.txt
 ```
 
+## DearPyGui
+## kivy
+## PyQt
 
-### Version
 
-python = 3.10
-kivy = 2.1.0
-QtPy = 2.2.0
-pyads = 3.3.9
+
+
+
 
 
