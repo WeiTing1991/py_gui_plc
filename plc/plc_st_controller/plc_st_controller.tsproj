@@ -10,7 +10,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{C06ABACB-6B90-49BB-A50C-E9BA0C6D08F3}" Name="motor_controller" PrjFilePath="motor_controller\motor_controller.plcproj" TmcFilePath="motor_controller\motor_controller.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{8C251303-7FD4-9CAA-B094-2DD245F5B35E}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="motor_controller\motor_controller.tmc" TmcHash="{F26DCB00-CB86-DB84-A2DE-CB696C1E1B5D}">
 					<Name>motor_controller Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>

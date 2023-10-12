@@ -4,7 +4,7 @@
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/COMPAS.svg)](https://pypi.python.org/project/COMPAS)
 [![PyPI - Latest Release](https://img.shields.io/pypi/v/COMPAS.svg)](https://pypi.python.org/project/COMPAS)
 
-The Simple GUI app for PLC controler. 
+The Simple GUI pratice app for Beckhoof PLC controler.
 
 
 ## __Requirements__
@@ -15,17 +15,33 @@ The Simple GUI app for PLC controler.
 ## __Installation__
 
 Create env
+python=3.10
 
-```bash
-conda config --add channels conda-forge
-conda create -n my-project python=3.10
+```powershell
+/path/to/python3.10 -m venv env
+
+or
+
+python -m venv env
 ```
 
 Install packages
+bash
 
 ```bash
-conda activate my-project
+source env/Scripts/activate
+
+```
+
+```powershell
+.\env\Scripts\Activate.ps1
 pip install -r requirements.txt
+```
+
+Check packages
+
+```powershell
+pip list
 ```
 
 ## DearPyGui

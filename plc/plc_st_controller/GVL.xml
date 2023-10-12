@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://www.plcopen.org/xml/tc6_0200">
+  <fileHeader companyName="Beckhoff Automation GmbH" productName="TwinCAT PLC Control" productVersion="3.5.13.21" creationDateTime="2023-10-12T21:00:45.8485613" />
+  <contentHeader name="motor_controller" modificationDateTime="2023-10-12T21:00:45.8505595">
+    <coordinateInfo>
+      <fbd>
+        <scaling x="1" y="1" />
+      </fbd>
+      <ld>
+        <scaling x="1" y="1" />
+      </ld>
+      <sfc>
+        <scaling x="1" y="1" />
+      </sfc>
+    </coordinateInfo>
+    <addData>
+      <data name="http://www.3s-software.com/plcopenxml/projectinformation" handleUnknown="implementation">
+        <ProjectInformation />
+      </data>
+    </addData>
+  </contentHeader>
+  <types>
+    <dataTypes />
+    <pous />
+  </types>
+  <instances>
+    <configurations />
+  </instances>
+  <addData>
+    <data name="http://www.3s-software.com/plcopenxml/globalvars" handleUnknown="implementation">
+      <globalVars name="GVL">
+        <variable name="b_RED_Mode_Manual">
+          <type>
+            <BOOL />
+          </type>
+          <documentation>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml">Mode</xhtml>
+          </documentation>
+        </variable>
+        <variable name="b_RED_Mode_Laptop">
+          <type>
+            <BOOL />
+          </type>
+          <documentation>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml">Mode</xhtml>
+          </documentation>
+        </variable>
+        <variable name="TemperatureAndPressure">
+          <type>
+            <string />
+          </type>
+          <initialValue>
+            <simpleValue value="'TemperatureAndPressure'" />
+          </initialValue>
+          <documentation>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml">***********************************************************</xhtml>
+          </documentation>
+        </variable>
+        <variable name="f_RED_Status_Temperature_Funnel_inlet">
+          <type>
+            <REAL />
+          </type>
+          <documentation>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml"> [°C] </xhtml>
+          </documentation>
+        </variable>
+        <variable name="f_RED_Status_Temperature_Funnel_outlet">
+          <type>
+            <REAL />
+          </type>
+          <documentation>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml"> [°C] </xhtml>
+          </documentation>
+        </variable>
+        <variable name="f_RED_Status_Temperature_Funnel_plate">
+          <type>
+            <REAL />
+          </type>
+          <documentation>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml"> [°C] change to concrete pump temperature </xhtml>
+          </documentation>
+        </variable>
+        <variable name="f_RED_Status_Pressure_Funnel_inlet">
+          <type>
+            <REAL />
+          </type>
+          <documentation>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml"> [ bar]</xhtml>
+          </documentation>
+        </variable>
+        <variable name="f_RED_Status_Temperature_Concrete_Pump">
+          <type>
+            <REAL />
+          </type>
+          <documentation>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml"> [°C] </xhtml>
+          </documentation>
+        </variable>
+        <variable name="f_RED_Status_Pressure_Concrete_Pump">
+          <type>
+            <REAL />
+          </type>
+          <documentation>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml"> [ bar]</xhtml>
+          </documentation>
+        </variable>
+        <addData>
+          <data name="http://www.3s-software.com/plcopenxml/attributes" handleUnknown="implementation">
+            <Attributes>
+              <Attribute Name="qualified_only" Value="" />
+            </Attributes>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/buildproperties" handleUnknown="implementation">
+            <BuildProperties>
+              <LinkAlways>true</LinkAlways>
+            </BuildProperties>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/interfaceasplaintext" handleUnknown="implementation">
+            <InterfaceAsPlainText>
+              <xhtml xmlns="http://www.w3.org/1999/xhtml">{attribute 'qualified_only'}
+VAR_GLOBAL
+	
+// ***********************************************************************************
+// Process inputs
+// ***********************************************************************************
+
+// WT ADD 
+// Mode 
+b_RED_Mode_Manual: BOOL; //Mode
+b_RED_Mode_Laptop: BOOL; //Mode
+
+
+// Temperature and Pressure Sensor
+TemperatureAndPressure: STRING := 'TemperatureAndPressure';//***********************************************************
+f_RED_Status_Temperature_Funnel_inlet : REAL; // [°C] 
+f_RED_Status_Temperature_Funnel_outlet : REAL; // [°C] 
+f_RED_Status_Temperature_Funnel_plate : REAL; // [°C] change to concrete pump temperature 
+
+f_RED_Status_Pressure_Funnel_inlet : REAL; // [ bar]
+
+f_RED_Status_Temperature_Concrete_Pump : REAL; // [°C] 
+f_RED_Status_Pressure_Concrete_Pump: REAL; // [ bar]
+
+END_VAR</xhtml>
+            </InterfaceAsPlainText>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+            <ObjectId>b5bcb611-5583-40cf-b05a-148ba1860da9</ObjectId>
+          </data>
+        </addData>
+      </globalVars>
+    </data>
+    <data name="http://www.3s-software.com/plcopenxml/projectstructure" handleUnknown="discard">
+      <ProjectStructure>
+        <Object Name="GVL" ObjectId="b5bcb611-5583-40cf-b05a-148ba1860da9" />
+      </ProjectStructure>
+    </data>
+  </addData>
+</project>
